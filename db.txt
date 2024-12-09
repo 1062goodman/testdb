@@ -1,0 +1,26 @@
+create tablespace example
+datafile 'c:\oracle\oradata\testdb\example01.dbf' size 100m
+autoextend on ;
+
+create user scott identified by tiger
+default tablespace example
+temporary tablespace temp
+quota unlimited on example
+quota unlimited on users;
+
+
+grant connect , resource to scott;
+
+
+create tablespace example2
+datafile 'c:\oracle\oradata\testdb\example02.dbf' size 100m
+autoextend on ;
+
+create user bicycle identified by tiger
+default tablespace example2
+temporary tablespace temp
+quota unlimited on example2
+quota unlimited on users;
+
+
+grant connect , resource to bicycle;
